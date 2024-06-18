@@ -10,7 +10,7 @@ exports.addReview = async (req, res) => {
     }
 };
 
-exports.getReviewsByRestaurant = async (req, res) => {
+exports.getReviewByRestaurant = async (req, res) => {
     const { restaurantId } = req.params;
     try {
         const reviews = await Review.findAll({
