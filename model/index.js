@@ -33,3 +33,26 @@ module.exports = {
     Review,
     Order
 };
+
+// models/index.js
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('SocialNetwork', 'root', 'password', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
+
+const Image = require('./image')(sequelize, DataTypes);
+const Post = require('./post')(sequelize, DataTypes);
+const Comment = require('./comment')(sequelize, DataTypes);
+const PostImage = require('./postImage')(sequelize, DataTypes);
+const UserImage = require('./userImage')(sequelize, DataTypes);
+
+module.exports = {
+    sequelize,
+    User,
+    Image,
+    Post,
+    Comment,
+    PostImage,
+    UserImage
+};
